@@ -29,8 +29,7 @@ pipeline {
             steps {
                     script {
                         ansiblePlaybook(
-                            becomeUser: 'ec2-user',
-                            credentialsId: 'amazonlinux',
+                            credentialsId: 'ec2-key', 
                             disableHostKeyChecking: true,
                             installation: 'ansible',
                             inventory: 'inventory.yaml',
@@ -39,7 +38,7 @@ pipeline {
 
                         ansiblePlaybook(
                             become: true,
-                            credentialsId: 'ubuntuuser',
+                            credentialsId: 'ec2-key',
                             disableHostKeyChecking: true,
                             installation: 'ansible',
                             inventory: 'inventory.yaml',
