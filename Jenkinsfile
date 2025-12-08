@@ -6,7 +6,6 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                #deleteDir()
                 sh 'echo cloning repo'
                 sh 'git clone https://github.com/saivarun0509/ansible-task.git' 
             }
