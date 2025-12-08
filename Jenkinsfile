@@ -14,7 +14,7 @@ pipeline {
         stage('Terraform Apply') {
             steps {
                 script {
-                    dir('ansible-task') {
+                    dir("${WORKSPACE}") {
                     sh 'terraform init'
                     sh 'terraform validate'
                     sh 'terraform plan'
